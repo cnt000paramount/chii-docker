@@ -7,5 +7,5 @@ WORKDIR /home/node/chii
 USER node
 RUN npm install chii
 EXPOSE 9000
-CMD ./node_modules/.bin/chii start -d 192.168.8.162:9000 -p 9000 --https --ssl-cert ./certs/cert.pem --ssl-key ./certs/cert-key.pem
+CMD ./node_modules/.bin/chii start -d 192.168.8.162:9000 -p 9000 --https --ssl-cert ./certs/192.168.8.162.pem --ssl-key ./certs/192.168.8.162-key.pem
 # CMD ./node_modules/.bin/chii start -d 127.0.0.1:9000 -p 9000 --https --ssl-cert ./certs/chii-server.crt --ssl-key ./certs/chii-server.key

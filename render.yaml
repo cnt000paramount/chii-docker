@@ -1,0 +1,13 @@
+services:
+  # A Docker web service
+  - type: web
+    name: chii-webdis
+    runtime: docker
+    repo: https://github.com/cnt000paramount/chii-docker.git # optional
+    region: frankfurt # optional (defaults to oregon)
+    plan: standard # optional (defaults to starter instance type)
+    branch: master # optional (defaults to master)
+    rootDir: chii-webdis
+    dockerCommand: docker run --name chii-image -p 9000:9000 -d chii-image
+    numInstances: 3 # optional (defaults to 1)
+    healthCheckPath: /
