@@ -6,6 +6,9 @@ rm chii-server.pass.key
 openssl req -new -key chii-server.key -out chii-server.csr
 openssl x509 -req -sha256 -days 365 -in chii-server.csr -signkey chii-server.key -out chii-server.crt
 cp chii-server\* ~/certs
+---
+
+mkcert localhost
 
 ## comandi docker
 
