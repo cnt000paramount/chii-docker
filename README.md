@@ -1,4 +1,4 @@
-# Chii repository with docker file to help deployng chii in you own server
+# Chii repository with docker file to help deploying chii in you own server
 
 https://github.com/liriliri/chii
 
