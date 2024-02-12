@@ -1,7 +1,6 @@
 FROM node:18-alpine
 RUN mkdir -p /home/node/chii/node_modules && chown -R node:node /home/node/chii
 RUN mkdir -p /home/node/chii/certs && chown -R node:node /home/node/chii/certs
-COPY antani.txt /home/node/chii/certs/antani.txt
 COPY ./certs/* /home/node/chii/certs
 RUN chmod 777 /home/node/chii/certs/*
 WORKDIR /home/node/chii
