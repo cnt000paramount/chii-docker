@@ -1,25 +1,20 @@
-## creare certificato
+# Chii repository with docker file to help deployng chii in you own server
 
-openssl genrsa -aes256 -passout pass:password -out chii-server.pass.key 4096
-openssl rsa -passin pass:password -in chii-server.pass.key -out chii-server.key
-rm chii-server.pass.key
-openssl req -new -key chii-server.key -out chii-server.csr
-openssl x509 -req -sha256 -days 365 -in chii-server.csr -signkey chii-server.key -out chii-server.crt
-cp chii-server\* ~/certs
+https://github.com/liriliri/chii
 
----
+## docker
 
-mkcert localhost
+`docker stop chii-image`
+`docker remove chii-image`
 
-## comandi docker
+`docker image build -t chii-image .`
 
-docker stop chii-image
-docker remove chii-image
+`docker run --name chii-image -p 9000:9000 -d chii-image`
 
-docker image build -t chii-image .
+## to start in local
 
-docker run --name chii-image -p 9000:9000 -d chii-image
+Assuming you installed chii as global npm module, and your IP in the local network is: 192.168.8.162
 
-## ---- from global npm installation:
-
+```shell
 chii start -d 192.168.8.162:9000 -p 9000 --https --ssl-cert ~/certs/debug.pluto.tv.pem --ssl-key ~/certs/debug.pluto.tv-key.pem
+```
