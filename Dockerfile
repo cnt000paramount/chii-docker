@@ -8,4 +8,5 @@ WORKDIR /home/node/chii
 USER node
 RUN npm install chii
 EXPOSE 9000
-CMD ./node_modules/.bin/chii start  -d chii-docker.onrender.com:9000 -p 9000 --https --ssl-cert ./certs/chii-docker.onrender.com.pem --ssl-key ./certs/chii-docker.onrender.com-key.pem
+CMD ./node_modules/.bin/chii start  -d chii-docker.onrender.com:9000 -p 9000 
+# --https --ssl-cert ./certs/chii-docker.onrender.com.pem --ssl-key ./certs/chii-docker.onrender.com-key.pem
