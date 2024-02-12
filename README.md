@@ -6,6 +6,7 @@ rm chii-server.pass.key
 openssl req -new -key chii-server.key -out chii-server.csr
 openssl x509 -req -sha256 -days 365 -in chii-server.csr -signkey chii-server.key -out chii-server.crt
 cp chii-server\* ~/certs
+
 ---
 
 mkcert localhost
@@ -19,6 +20,6 @@ docker image build -t chii-image .
 
 docker run --name chii-image -p 9000:9000 -d chii-image
 
-## comando originale
+## ---- from global npm installation:
 
-node bin/chii.js start -d 127.0.0.1:9000 -p 9000 --https --ssl-cert ~/certs/chii-server.crt --ssl-key ~/certs/chii-server.key
+chii start -d 192.168.8.162:9000 -p 9000 --https --ssl-cert ~/certs/debug.pluto.tv.pem --ssl-key ~/certs/debug.pluto.tv-key.pem
