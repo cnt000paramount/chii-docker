@@ -3,11 +3,10 @@ services:
   - type: web
     name: chii-webdis
     runtime: docker
-    repo: https://github.com/cnt000paramount/chii-docker.git # optional
-    region: frankfurt # optional (defaults to oregon)
-    plan: standard # optional (defaults to starter instance type)
-    branch: render # optional (defaults to master)
+    repo: https://github.com/cnt000paramount/chii-docker.git
+    region: frankfurt
+    branch: main
     rootDir: chii-webdis
     dockerCommand: docker run --name chii-image -p 9000:9000 -d chii-image
-    numInstances: 1 # optional (defaults to 1)
+    numInstances: 1
     healthCheckPath: /target.js

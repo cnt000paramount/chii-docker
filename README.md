@@ -15,6 +15,8 @@ https://github.com/liriliri/chii
 
 Assuming you installed chii as global npm module, and your IP in the local network is: 192.168.8.162
 
+Generate a certificate with mkcert or openssl, then put in certs/ folder:
+
 ```shell
-chii start -d 192.168.8.162:9000 -p 9000 --https --ssl-cert ~/certs/debug.pluto.tv.pem --ssl-key ~/certs/debug.pluto.tv-key.pem
+chii start -d 192.168.8.162:9000 -p 9000 --https --ssl-cert ./certs/debug.pluto.tv.pem --ssl-key ./certs/debug.pluto.tv-key.pem
 ```
