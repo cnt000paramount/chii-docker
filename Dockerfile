@@ -4,4 +4,4 @@ WORKDIR /home/node/chii
 USER node
 RUN npm install chii
 EXPOSE 9000
-CMD ./node_modules/.bin/chii start  -d chii-docker.onrender.com -p 9000 
+# CMD ./node_modules/.bin/chii start -d localhost -p 9000 
